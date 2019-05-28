@@ -1,0 +1,3 @@
+/home/debian/test.py
+/home/debian/Immagini/NODEMCU_V2.png
+installed_packages.txt

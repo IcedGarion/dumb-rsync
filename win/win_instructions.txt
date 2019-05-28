@@ -1,0 +1,14 @@
+- installa cygwin
+- scegli i package 'rsync' e 'openssh'
+- crea coppia chiavi con ssh-keygen dentro cygwin
+- metti chiave pubblica sul server
+
+- scrivi backup_script.sh: rsync --progress ....
+  Imposta tutti i parametri: VEDI FILE
+- scrivi eseguibile backup: backup_script.bat
+  ( esegue cygwin/bash e gli da come argomento lo script sopra, backup_script.sh )
+  VEDI FILE
+- lancia file_adder.exe e scegli ogni volta i file / dir da fare backup
+  ( questo exe scrive le destinazioni in un file, file_list.txt)
+
+- esegui backup_script.bat
