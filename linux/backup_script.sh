@@ -5,11 +5,11 @@ file="file_list.txt"
 server="192.168.1.110"
 port="2200"
 dest="/home/backup/TEST"
-
+user="backup"
 
 echo "Files to back up:"
 cat $file
 
 
 # backup cmd
-rsync --recursive --compress --progress -vv -e "ssh -p 2200" $(cat $file) backup@$server:$dest
+rsync --recursive --compress --progress -vv -e "ssh -p 2200" $(cat $file) $user@$server:$dest

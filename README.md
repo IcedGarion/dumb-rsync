@@ -1,3 +1,14 @@
+manca sia in linux che windows client
+e anche nei relativi script
+la questione USer sul server (default backup)
+
+
+e poi fai un'intro figa su come funziona il tutto...
+
+
+
+
+
 # RSYNC BACKUP
 
 ## Description
@@ -10,8 +21,8 @@ This project is inspired by http://www.megalab.it/4485/realizzare-un-backup-da-r
 
 ## How it works
 - set up a linux server with ssh and rsync installed.
-- edit the file_list.txt file by adding the directories' paths you want to back up (one per line).
-- edit `backup_script.sh` by adding the IP address of a linux server hosting the files and where to put them.
+- in a windows or linux client, edit `file_list.txt` by adding the directories' paths you want to back up (one per line).
+- in the same way, edit `backup_script.sh` and put the IP address of a linux server hosting the files and where to put them on it.
 - launch the script and wait for the files to be back'd up!
 - ( you can also schedule automatic backups )
 
@@ -87,13 +98,15 @@ Server must be a linux. Assuming that you have a working and net-connected linux
 	
 	dest="/home/backup/TEST"  
 	
-	...   
+    user="backup"
+...   
 
 
   "**file**" will be a plain text file containing the directories paths to be back'd up.  
   "**server**" will contain your backup server's IP: for a LAN server, it will look like `192.168.1.xxx`.  
   "**port**": the default port for ssh (rsync) would be 22 (unless you manually change it).  
-  The last parameter is the directory, in the backup server, in which your sent files will be saved.  
+  "**dest**" is the directory, in the backup server, in which your sent files will be saved.  
+  "**user**": linux server's user used to connect to ssh. During the backup you will then be required user's password.
 
 ### Add files / directories you want to back up to file_list.txt:  
 
@@ -141,7 +154,8 @@ You should now have a fully functional bash installation
 	
 	dest="/home/backup/TEST"  
 	
-
+    user="backup"  
+    
 
 In a similar way as for we did on linux client, edit these parameters:
 
@@ -152,20 +166,17 @@ In a similar way as for we did on linux client, edit these parameters:
 
 Prepend `/cygdrive/` to the path and change all backslashes into slashes.
   
-  "**server**" will contain your backup server's IP: for a LAN server, it will look like "192.168.1.xxx".  
-  
+  "**server**" will contain your backup server's IP: for a LAN server, it will look like `192.168.1.xxx`.  
   "**port**": the default port for ssh (rsync) would be 22 (unless you manually change it).  
-  
-  The last parameter is the directory, in the backup server, in which your sent files will be saved. (Linux style)  
-  
-
+  "**dest**" is the directory, in the backup server, in which your sent files will be saved. (Linux style)  
+  "**user**": linux server's user used to connect to ssh. During the backup you will then be required user's password.
 
 ### Add files / directories you want to back up to file_list.txt:
     C:\Users\user\Desktop\backup  
     
 	C:\Users\user\Desktop\a_file.txt  
 	
-`
+
 
 You don't need to prepend /cygdrive/ and translate backslashes into slashes here.  
 
