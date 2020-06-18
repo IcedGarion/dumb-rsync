@@ -1,14 +1,3 @@
-manca sia in linux che windows client
-e anche nei relativi script
-la questione USer sul server (default backup)
-
-
-e poi fai un'intro figa su come funziona il tutto...
-
-
-
-
-
 # RSYNC BACKUP
 
 ## Description
