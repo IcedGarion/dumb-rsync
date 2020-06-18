@@ -12,4 +12,4 @@ cat $file
 
 
 # backup cmd
-rsync --recursive --compress --info=progress2 --no-inc-recursive -vv -e "ssh -p 2200" $(cat $file) $user@$server:$dest
+rsync --recursive --compress -zz --info=progress2 --no-inc-recursive -vv -e "ssh -p 2200" $(cat $file) $user@$server:$dest

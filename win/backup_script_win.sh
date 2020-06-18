@@ -10,4 +10,4 @@ cat $file
 
 
 # backup
-rsync --recursive --compress --info=progress2 --no-inc-recursive -vv -e "ssh -p $port" --files-from=$file "" $user@$server:$dest
+rsync --recursive --compress -zz --info=progress2 --no-inc-recursive -vv -e "ssh -p $port" --files-from=$file "" $user@$server:$dest
